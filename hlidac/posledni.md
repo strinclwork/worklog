@@ -1,7 +1,7 @@
-# Golf VII 1.2 TSI – 18. 11. 2026
+# Golf VII 1.2 TSI – 19. 11. 2026
 
-Vyhovuje celkem: 104 | nové: 1
+Vyhovuje celkem: 103 | nové: 1
 
 | Zdroj | Inzerát | Rok | Najeto | Cena | Převodovka | Místo | Pozn. |
 |---|---|---|---|---|---|---|---|
-| Sauto | [Volkswagen Golf, VII 1.2TSi 77kW 6kv 90tis.km](https://www.sauto.cz/osobni/detail/volkswagen/golf/211408023) | 2013 | 92 787 km | 179 000 Kč | Manuální | Cheb |  |
+| Sauto | [Volkswagen Golf, 1.2 TSI, Kožené sedačky](https://www.sauto.cz/osobni/detail/volkswagen/golf/211089948) | 2014 | 143 889 km | 170 000 Kč | Manuální | Hlavní město Praha |  |
