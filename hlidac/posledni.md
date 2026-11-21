@@ -1,9 +1,9 @@
-# Golf VII 1.2 TSI – 20. 11. 2026
+# Golf VII 1.2 TSI – 21. 11. 2026
 
-Vyhovuje celkem: 107 | nové: 3
+Vyhovuje celkem: 109 | nové: 3
 
 | Zdroj | Inzerát | Rok | Najeto | Cena | Převodovka | Místo | Pozn. |
 |---|---|---|---|---|---|---|---|
-| Sauto | [Volkswagen Golf, 1.2 TSI 63 kW Trendline](https://www.sauto.cz/osobni/detail/volkswagen/golf/211482129) | 2013 | 146 685 km | 139 900 Kč | Manuální | Hlavní město Praha |  |
-| Bazoš | [Volkswagen Golf,  1.2 TSi Comfort Top](https://auto.bazos.cz/inzerat/226704424/volkswagen-golf-12-tsi-comfort-top.php) | 2013 | 189 300 km | 169 900 Kč |  | Liberec |  |
-| Bazoš | [Vw Golf-1.2TSI-63kW-TEMPOMAT](https://auto.bazos.cz/inzerat/226699931/vw-golf-12tsi-63kw-tempomat.php) | 2017 | ? | 209 900 Kč |  | Brno venkov | km neuvedeny v náhledu |
+| Bazoš | [Volkswagen Golf, MATCH 1.2 TSI 63kW](https://auto.bazos.cz/inzerat/226723201/volkswagen-golf-match-12-tsi-63kw.php) | ? | ? | 138 000 Kč |  | České Budějovice | rok neuveden, km neuvedeny v náhledu |
+| Bazoš | [Vw Golf 7 1.2 tsi  94500km](https://auto.bazos.cz/inzerat/226715313/golf-7-12-tsi-94500km.php) | 2013 | 94 500 km | 159 000 Kč |  | Semily |  |
+| Bazoš | [VW Golf 1.2tsi 81kw,r.v.2016, ALLSTAR,naj 149tkm](https://auto.bazos.cz/inzerat/226716905/vw-golf-12tsi-81kwrv2016-allstarnaj-149tkm.php) | 2016 | 149 000 km | 225 000 Kč |  | Louny |  |
