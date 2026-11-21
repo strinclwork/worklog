@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Hlídač inzerátů: VW Golf VII 1.2 TSI hatchback, max 190 000 km, max 230 000 Kč.
+"""Hlídač inzerátů: VW Golf VII 1.2 TSI 81 kW hatchback, rok od 2014, max 190 000 km, max 230 000 Kč.
 
 Zdroje: sauto.cz (JSON API) a auto.bazos.cz (HTML).
 Nové inzeráty porovnává se souborem seen.json (ID už viděných inzerátů).
@@ -24,8 +24,9 @@ from pathlib import Path
 MAX_KM = 190_000
 MAX_CENA = 230_000
 MIN_CENA = 40_000      # Bazoš: odfiltruje díly a příslušenství
-ROK_OD = 2013          # Golf VII 1.2 TSI: výroba cca 11/2012 až 2017
-ROK_2012_POVOLIT = True  # 2012 projde jen se zmínkou VII/7 nebo s 1. registrací 10–12/2012
+ROK_OD = 2014          # Golf VII 1.2 TSI: výroba cca 11/2012 až 2017
+ROK_2012_POVOLIT = False  # 2012 projde jen se zmínkou VII/7 nebo s 1. registrací 10–12/2012
+VYKON_KW = 81          # 1.2 TSI 81 kW = 110 k; Sauto filtruje přes API, Bazoš z textu
 # ---------------------------------------------
 
 DIR = Path(__file__).resolve().parent
@@ -36,6 +37,18 @@ UA = {"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64)"}
 KOMBI = re.compile(r"\b(combi|kombi|variant|sportsvan|sportsvan|plus|alltrack|cabrio)\b", re.I)
 PRODANO = re.compile(r"\b(prodáno|prodano|rezervace|rezervováno)\b", re.I)
 GOLF6 = re.compile(r"golf\W{0,3}(vi|6)\b|(?<![\w.,])VI(?![\wI])")  # "Golf VI", "Golf, VI", samostatné "VI"
+VYKON = re.compile(r"\b(\d{2,3})\s*(kw|k|ps|hp|koní)\b", re.I)
+
+
+def vykon_ok(text):
+    """Vrátí (projde, poznámka). Uvedený jiný výkon než 81 kW / 110 k vyřadí, neuvedený pustí s poznámkou."""
+    vals = [(int(n), j.lower()) for n, j in VYKON.findall(text)]
+    kw = [n for n, j in vals if j == "kw"] or [round(n * 0.7355) for n, j in vals if j != "kw" and 80 <= n <= 130]
+    if not kw:
+        return True, "výkon neuveden"
+    return (VYKON_KW in kw or round(110 * 0.7355) in kw), ""
+
+
 GOLF7 = re.compile(r"golf\W{0,3}(vii|7)\b|\bVII\b|\bmk7\b", re.I)
 
 
@@ -74,6 +87,8 @@ def sauto():
         "vehicle_body_seo": "hatchback",
         "engine_volume_from": 1100,
         "engine_volume_to": 1300,
+        "engine_power_from": VYKON_KW,
+        "engine_power_to": VYKON_KW,
         "limit": 100,
     }
     out, offset = [], 0
@@ -168,6 +183,10 @@ def bazos():
             ok, pozn = rok_ok(rok, text, mesic)
             if not ok:
                 continue
+            ok_v, pozn_v = vykon_ok(text)
+            if not ok_v:
+                continue
+            pozn = ", ".join(x for x in (pozn, pozn_v) if x)
             cena_n = re.sub(r"\D", "", html.unescape(re.sub(r"<[^>]+>", "", cena)))
             cena_n = int(cena_n) if cena_n else None
             if cena_n is not None and not (MIN_CENA <= cena_n <= MAX_CENA):
@@ -223,7 +242,7 @@ def main():
     prvni_beh = not seen
     nove = vse if a.vse else [i for i in vse if i["id"] not in seen]
 
-    hlav = (f"# Golf VII 1.2 TSI – {date.today():%d. %m. %Y}\n\n"
+    hlav = (f"# Golf VII 1.2 TSI {VYKON_KW} kW, od {ROK_OD} – {date.today():%d. %m. %Y}\n\n"
             f"Vyhovuje celkem: {len(vse)} | {'všechny' if a.vse else 'nové'}: {len(nove)}"
             + (" (první běh – vše je nové)" if prvni_beh and not a.vse else "") + "\n")
     if chyby:
