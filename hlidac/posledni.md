@@ -1,7 +1,7 @@
-# Golf VII 1.2 TSI 81 kW, od 2014 – 24. 11. 2026
+# Golf VII 1.2 TSI 81 kW, od 2014 – 25. 11. 2026
 
-Vyhovuje celkem: 27 | nové: 1
+Vyhovuje celkem: 26 | nové: 1
 
 | Zdroj | Inzerát | Rok | Najeto | Cena | Převodovka | Místo | Pozn. |
 |---|---|---|---|---|---|---|---|
-| Bazoš | [Volkswagen Golf VII 1.2 TSI, 2014, 83 700 km – 179 900 Kč](https://auto.bazos.cz/inzerat/226902760/volkswagen-golf-vii-12-tsi-2014-83-700-km-179-900-kc.php) | 2014 | 83 700 km | 179 900 Kč |  | Kutná Hora | výkon neuveden |
+| Bazoš | [VW Golf 1.2tsi 81kw,r.v.2016, ALLSTAR,naj 149tkm](https://auto.bazos.cz/inzerat/226925447/vw-golf-12tsi-81kwrv2016-allstarnaj-149tkm.php) | 2016 | 149 000 km | 225 000 Kč |  | Louny |  |
